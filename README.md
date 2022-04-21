@@ -53,13 +53,9 @@ sudo ufw allow 443 #HTTPS
 ## 2.3 HTTPS
 
 ```bash
-#Pullen container image en starten
-sudo docker pull vaultwarden/server:latest
-sudo docker run -d --name vaultwarden -v /vw-data/:/data/ -p 80:80 vaultwarden/server:latest
-
 #SSL dir maken
 sudo mkdir /ssl
-sudo cd /ssl
+cd /ssl
 
 #creating CA keys
 sudo openssl genpkey -algorithm RSA -aes128 -out private-ca.key -outform PEM -pkeyopt rsa_keygen_bits:2048
